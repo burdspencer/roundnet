@@ -14,7 +14,6 @@
 	<a href="index.html" class="button">Home</a> &nbsp; &nbsp;
 	<a href="players.php" class="button">Players</a> &nbsp; &nbsp;
 	<a href="forms.html" class="button">Form Lookup</a> &nbsp; &nbsp;
-	<a href="contact.html" class="button">Contact</a> &nbsp; &nbsp;
 </nav>
 <body>
 	<br>
@@ -32,9 +31,18 @@
 	<br>
 	<input type="submit" name="submit" value="Add Player"><br>
 	<br>
+	<input type="submit" name="clear" value="Clear Data">
+	<br>
+	<br>
+	<br>
 	</form>
 	<?php
-
+		if(isset($_POST['submit'])) //When user hits clear data || THIS IS NOT WORKING AT THIS TIME
+		{
+			$file = fopen("players.txt", "a"); //Open file to write || Possible issue with file open argument?
+			ftruncate($file, 0); // Clear content to 0 bits
+			fclose($file); //Close file
+		}
 		if(isset($_POST['submit'])) //When user hits submit
 		{
 			$name = $_POST['name']; //Declare vars
