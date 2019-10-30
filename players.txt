@@ -1,0 +1,4 @@
+Spencer Burd,21,spencer.d.burd@wmich.edu,Casual
+Jackson Smith,22,jackson.a.smith@wmich.edu,Hardcore
+Hector Vasquez,18,hector.l.vasquez@wmich.edu,Hardcore
+John Bradley,19,john.r.bradley@wmich.edu,Casual
