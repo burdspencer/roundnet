@@ -1,7 +1,7 @@
 Import .csv - 0%
-Export as .csv - 0% <- Likely won't happen
-Less generic buttons - 80%
-Download and upload forms (as it stands it will likely just be checkmarks) - 80%
-      -Want to add some sort of directory for redownloading said files
-      -Want to add some sort of sorting ability to the directory, whether by search or a dropdown menu element?
-Fix wrapping on forms.php so it resizes better
+Export as .csv - 0%
+Less generic buttons - 50%
+Download and upload forms - 50%
+Use truncate() function to remove rogue row on 'Players' table - 0%
+Zebra stripe on tables - 0%
+Fix Wrapping on Forms.php
