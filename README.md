@@ -1,25 +1,10 @@
 # roundnet
 Roundnet @ WMU Information System
-     _______  _______           _        ______   _        _______ _________
-    (  ____ )(  ___  )|\     /|( (    /|(  __  \ ( (    /|(  ____ \\__   __/
-    | (    )|| (   ) || )   ( ||  \  ( || (  \  )|  \  ( || (    \/   ) (   
-    | (____)|| |   | || |   | ||   \ | || |   ) ||   \ | || (__       | |   
-    |     __)| |   | || |   | || (\ \) || |   | || (\ \) ||  __)      | |   
-    | (\ (   | |   | || |   | || | \   || |   ) || | \   || (         | |   
-    | ) \ \__| (___) || (___) || )  \  || (__/  )| )  \  || (____/\   | |   
-    |/   \__/(_______)(_______)|/    )_)(______/ |/    )_)(_______/   )_(   
-                                                                            
-                            _________    _______    
-                            \__   __/   (  ____ \   
-                               ) (      | (    \/   
-                               | |      | (_____    
-                               | |      (_____  )   
-                               | |            ) |   
-                            ___) (___ _ /\____) | _ 
-                            \_______/(_)\_______)(_)
-                                                    
-                                                    
+
+Team Leader: Madison Hybels
+Business Analyst: Sundos Alabbad
+Technical Analyst: Tawvan Chestnut
+Lead Developer: Spencer Burd
                                                  
-This information system uses PHP and HTML to store and display information about the 
-member base of the Roundnet Club at Western Michigan University.
+This information system uses PHP and HTML to store and display information about the member base of the Roundnet Club at Western Michigan University. The home page of the site displays usage statistics of the information system. The 'Players' page allows administrators to add new members to the database, and wipe the database if desired. The 'Forms' page allows administrators (both Club and WMU) to download and upload concussion and safe driver forms, which are both required for membership.
 
