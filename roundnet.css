@@ -81,7 +81,16 @@ input[type=text]:focus {
 			outline: none;
 			border: 2px solid #000000; }
 .form { background-color: #8b794b;
-				color: #FFFFFF;
-				width: 25%;
-				justify-content: center;
-				padding: 8px 20px; }
+			color: #FFFFFF;
+			width: auto;
+			justify-content: center;
+			padding: 8px 20px;}
+.column {
+  float: left;
+  width: 33.33%;
+	border-radius: 10px;
+	border-color: #000000;
+	background-color: #cfba83;}
+.row:after {display: table;
+					  clear: both;
+						}

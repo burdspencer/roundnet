@@ -17,18 +17,14 @@
 </nav>
 <body>
 	<center>
-		<br>
-		<br>
-		<br>
+		<br><br><br>
 		<div class="form">
 			<form action="#" method="post" enctype="multipart/form-data">
 		  Select file to upload:<br>
 		  <input type="file" name="fileToUpload" id="fileToUpload" class="submitButton">
-			<br>
-			<br>
+			<br><br>
 		  <input type="submit" value="Upload File" name="submit" class="submitButton">
-			<br>
-			<br>
+			<br><br>
 
 			<?php
 				if(isset($_POST['submit'])){

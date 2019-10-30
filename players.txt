@@ -1,1 +1,5 @@
-spencer,21,spencer@burd.com,Hardcore
+Spencer,21,burdspencer@gmail.com,Casual,Not Submitted
+Spencer,21,burdspencer@gmail.com,Casual,Not Submitted
+Spencer,21,burdspencer@gmail.com,Casual,Not Submitted
+Spencer,21,burdspencer@gmail.com,Casual,Not Submitted
+Spencer,21,burdspencer@gmail.com,Casual,Not Submitted

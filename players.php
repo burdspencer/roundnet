@@ -16,9 +16,7 @@
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body id="wrapper">
-	<br>
-	<br>
-	<br>
+	<br><br><br>
 	<center>
 	<form action="#" method ="post">
 	Name:<input type="text" name="name" class="name"> &nbsp;	Age:<input type="text" name="age" class="age"> <br><br>
@@ -27,84 +25,53 @@
 	Playstyle:<br>
 	<input type="radio" name="radio" value="Casual">Casual
 	<input type="radio" name="radio" value="Hardcore">Hardcore
-	<br>
-	<br>
+	<br><br>
 	Forms Submitted:<br>
 	<input type="radio" name="forms" value="Not Submitted">Not Submitted
 	<input type="radio" name="forms" value="Submitted">Submitted
-	<br>
-	<br>
+	<br><br>
 	<input type="submit" name="submit" value="Add Player">
 	&nbsp;
 	<input type="submit" name="clear" value="Clear Data">
-	<br>
-	<br>
-	<br>
+	<br><br><br>
 	</form>
 	<?php
-		if(isset($_POST['submit'])) //When user hits clear data || THIS IS NOT WORKING AT THIS TIME
-		{
-			$file = fopen("players.txt", "a"); //Open file to write || Possible issue with file open argument?
-			ftruncate($file, 0); // Clear content to 0 bits
-			fclose($file); //Close file
-		}
+		if(isset($_POST['clear'])) //When user hits clear data
+			{
+				$file = fopen("players.txt", "a"); //Open file to write
+				ftruncate($file, 0); // Clear content to 0 bits
+				fclose($file); //Close file
+			}
 
 		if(isset($_POST['submit'])) //When user hits submit
-		{
-			$name = $_POST['name']; //Declare vars
-			$age = $_POST['age'];
-			$email = $_POST['email'];
-			$radio = $_POST['radio'];
-			$forms = $_POST['forms'];
+			{
+				$name = $_POST['name']; //Declare vars
+				$age = $_POST['age'];
+				$email = $_POST['email'];
+				$radio = $_POST['radio'];
+				$forms = $_POST['forms'];
 
-			$file = fopen("players.txt","a") or die("File non-existent or corrupted"); //Open text file
-			$s = $name.",".$age.",".$email.",".$radio.",".$forms."\n"; //Declare value to be written to file
-			fputs($file,$s) or die("Data could not be written to file"); //Write single line to file
-
-			fclose($file); //Close file
-		}
+				$file = fopen("players.txt","a") or die("File non-existent or corrupted"); //Open text file
+				$s = $name.",".$age.",".$email.",".$radio.",".$forms."\n"; //Declare value to be written to file
+				fputs($file,$s) or die("Data could not be written to file"); //Write single line to file
+				fclose($file); //Close file
+			}
 
 		/* THIS CREATES THE TABLE */
 
 		 $myFile = "players.txt"; //File declared
 
 		 $openFile = fopen($myFile, "r"); //Open file for read
-		 echo "<table>";
-		 echo "<tr>";
-		 echo "<th>";
-		 	echo "Name\t";
-		 echo "</th>";
-		 echo "<th>";
-		 	echo "Age\t";
-		 echo "</th>";
-		 echo "<th>";
-		 	echo "Email\t";
-		 echo "</th>";
-		 echo "<th>";
-		 	echo "Playstyle\t";
-		 echo "</th>";
+		 echo "<table><tr><th>Name\t</th><th>Age\t</th><th>Email\t</th><th>Playstyle\t</th><th>Forms?\t</th>";
 			if (file_exists($myFile)) //if file exists
 		  {
 		     while (!feof($openFile)) //while file pointer is not at end of file
 		     {
 		       $player = fgets($openFile); //get file contents, put them in $player
-		       $fileName = explode(",", $player); //Explode on comma, store in $fileName
-					 echo "<tr>";
-					 echo "<td>";
-					 echo "$fileName[0]\t";
-					 echo"</td>";
-					 echo "<td>";
-					 echo "$fileName[1]\t";
-					 echo"</td>";
-					 echo "<td>";
-					 echo "$fileName[2]\t";
-					 echo"</td>";
-					 echo "<td>";
-					 echo "$fileName[3]\t";
-					 echo"</td>";
-					 echo "</tr>";
+		       $element = explode(",", $player); //Explode on comma, store in $fileName
+					 echo "<tr><td>$element[0]\t</td><td>$element[1]\t</td><td>$element[2]\t</td><td>$element[3]\t</td><td>$element[4]\t</td></tr>"; //Display the table
 		     }
-		      fclose($openFile);
+		  fclose($openFile);
 		  }
 		  else
 		  {
