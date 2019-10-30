@@ -1,4 +1,4 @@
-Import .csv
-Export as .csv
-Less generic buttons
-Download and upload forms (as it stands it will likely just be checkmarks
+Import .csv - 0%
+Export as .csv - 0%
+Less generic buttons - 50%
+Download and upload forms (as it stands it will likely just be checkmarks) - 30%
