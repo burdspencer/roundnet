@@ -64,7 +64,8 @@ input[type=text]:focus {
 			border: 2px solid #000000;
 }
 .form { background-color: #8b794b;
-				width: auto;
+				color: #FFFFFF;
+				width: 30%;
 				justify-content: center;
 
 }

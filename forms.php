@@ -16,12 +16,17 @@
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body>
-	<div class="form">
-		<form action="upload.php" method="post" enctype="multipart/form-data">
-	  Select file to upload:
-	  <input type="file" name="fileToUpload" id="fileToUpload">
-	  <input type="submit" value="Upload Image" name="submit">
-	</div>
+	<center>
+		<br>
+		<br>
+		<br>
+		<div class="form">
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+		  Select file to upload:
+		  <input type="file" name="fileToUpload" id="fileToUpload">
+		  <input type="submit" value="Upload File" name="submit">
+		</div>
+	</center>
 </body>
 </div>
 </html>
