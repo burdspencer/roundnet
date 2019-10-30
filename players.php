@@ -15,7 +15,7 @@
 	<a href="players.php" class="button">Players</a> &nbsp; &nbsp;
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
-<body>
+<body id="wrapper">
 	<br>
 	<br>
 	<br>

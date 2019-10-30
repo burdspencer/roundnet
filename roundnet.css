@@ -1,36 +1,32 @@
 header {background-color: #a99560;
 		color: #FFFFFF;
-		font-family: Calibri, sans-serif;
+		font-family: Arial, sans-serif;
 		text-align: center;
 		font-size: 120%;
-		display: inline-block;
-		}
+		display: inline-block;}
 nav {background-color: #a99560;
 	 text-align: center;
-	 font-family: Georgia, serif;
+	 font-family: Arial, sans-serif;
 	 font-style: oblique;
-	 font-size: 100%;
-	 }
+	 font-size: 100%;}
 body{background-color: #a99560;
- 		 font-size:100%;}
+ 		 font-size:110%;}
 footer{background-color: #a99560;}
 footer nav{background-color: #a99560;}
 #wrapper {width: 80%;
 		  margin-right:auto;
 		  margin-left: auto;
-		  min-width: 700px;
-		 }
+		  min-width: 700px;}
 #center {display: block;
 		 margin-left: auto;
-		 margin-right: auto;
-		}
+		 margin-right: auto;}
 .button {background-color:#BB9D4E;
 		 border-radius: 5px;
 		 box-shadow: 0 8px #444444;
 		 padding:       8px 20px;
 		 color:         #ffffff;
 		 display:       inline-block;
-		 font:          normal bold 24px/1 "Calibri", sans-serif;
+		 font:          normal bold 24px/1 Arial, sans-serif;
 		 text-align:    center;
 		 text-shadow:   2px 2px #000000;
 		 text-decoration: none;}
@@ -42,10 +38,31 @@ footer nav{background-color: #a99560;}
 		 padding:       8px 20px;
 		 color:         #ffffff;
 		 display:       inline-block;
-		 font:          normal bold 24px/1 "Calibri", sans-serif;
+		 font:          normal bold 24px/1 Arial, sans-serif;
 		 text-align:    center;
 		 text-shadow:   2px 2px #000000;
 		 text-decoration: none;}
+.submitButton {background-color:#BB9D4E;
+							 border-radius: 5px;
+							 box-shadow: 0 8px #444444;
+							 padding:       8px 10px;
+							 color:         #ffffff;
+							 display:       inline-block;
+							 font:          normal bold 16px/1 Arial, sans-serif;
+							 text-align:    center;
+							 text-shadow:   2px 2px #000000;
+							 text-decoration: none;}
+.submitButton:active { box-shadow: 0 8px #666;
+								 transform: translateY(4px);
+								 background-color:#BB9D4E;
+								 border-radius: 5px;
+								 padding:       8px 10px;
+								 color:         #ffffff;
+								 display:       inline-block;
+								 font:          normal bold 16px/1 Arial, sans-serif;
+								 text-align:    center;
+								 text-shadow:   2px 2px #000000;
+								 text-decoration: none;}
 table, tr, th, td{
 			table-layout:fixed;
 			min-width: 100%;
@@ -61,11 +78,9 @@ input[type=text] {
 			font-family: Calibri, sans-serif;}
 input[type=text]:focus {
 			outline: none;
-			border: 2px solid #000000;
-}
+			border: 2px solid #000000; }
 .form { background-color: #8b794b;
 				color: #FFFFFF;
-				width: 30%;
+				width: 25%;
 				justify-content: center;
-
-}
+				padding: 8px 20px; }

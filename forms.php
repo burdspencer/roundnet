@@ -22,9 +22,14 @@
 		<br>
 		<div class="form">
 			<form action="#" method="post" enctype="multipart/form-data">
-		  Select file to upload:
-		  <input type="file" name="fileToUpload" id="fileToUpload">
-		  <input type="submit" value="Upload File" name="submit">
+		  Select file to upload:<br>
+		  <input type="file" name="fileToUpload" id="fileToUpload" class="submitButton">
+			<br>
+			<br>
+		  <input type="submit" value="Upload File" name="submit" class="submitButton">
+			<br>
+			<br>
+
 			<?php
 				if(isset($_POST['submit'])){
 				  $target_dir = "uploads/";
@@ -54,6 +59,7 @@
 				  }
 				}
 			?>
+
 		</div>
 	</center>
 </body>
