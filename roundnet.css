@@ -11,7 +11,8 @@ nav {background-color: #a99560;
 	 font-style: oblique;
 	 font-size: 100%;
 	 }
-body{background-color: #a99560; }
+body{background-color: #a99560;
+ 		 font-size:100%;}
 footer{background-color: #a99560;}
 footer nav{background-color: #a99560;}
 #wrapper {width: 80%;
@@ -50,4 +51,20 @@ table, tr, th, td{
 			min-width: 100%;
 			border: 1px solid black;
 			background-color:#cfba83; }
-#age {text-align: center;}
+input[type=text] {
+			width: 7%;
+			transition: width 0.4s ease-in-out;
+			padding: 2px 2px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+			text-align: center;
+			font-family: Calibri, sans-serif;}
+input[type=text]:focus {
+			outline: none;
+			border: 2px solid #000000;
+}
+.form { background-color: #8b794b;
+				width: auto;
+				justify-content: center;
+
+}

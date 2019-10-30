@@ -11,9 +11,9 @@
 <a href="index.html"><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
 </header>
 <nav>
-	<a href="index.html" class="button">Home</a> &nbsp; &nbsp;
+	<a href="index.php" class="button">Home</a> &nbsp; &nbsp;
 	<a href="players.php" class="button">Players</a> &nbsp; &nbsp;
-	<a href="forms.html" class="button">Form Lookup</a> &nbsp; &nbsp;
+	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body>
 	<br>
@@ -21,16 +21,21 @@
 	<br>
 	<center>
 	<form action="#" method ="post">
-	Name:<input type="text" name="name"> &nbsp;	Age:<input type="text" name="age"> <br><br>
-	Email:<input type="text" name="email"> &nbsp;<br>
+	Name:<input type="text" name="name" class="name"> &nbsp;	Age:<input type="text" name="age" class="age"> <br><br>
+	Email:<input type="text" name="email" class="email"> &nbsp;<br>
 	<br>
 	Playstyle:<br>
 	<input type="radio" name="radio" value="Casual">Casual
 	<input type="radio" name="radio" value="Hardcore">Hardcore
 	<br>
 	<br>
-	<input type="submit" name="submit" value="Add Player"><br>
+	Forms Submitted:<br>
+	<input type="radio" name="forms" value="Not Submitted">Not Submitted
+	<input type="radio" name="forms" value="Submitted">Submitted
 	<br>
+	<br>
+	<input type="submit" name="submit" value="Add Player">
+	&nbsp;
 	<input type="submit" name="clear" value="Clear Data">
 	<br>
 	<br>
@@ -43,21 +48,23 @@
 			ftruncate($file, 0); // Clear content to 0 bits
 			fclose($file); //Close file
 		}
+
 		if(isset($_POST['submit'])) //When user hits submit
 		{
 			$name = $_POST['name']; //Declare vars
 			$age = $_POST['age'];
 			$email = $_POST['email'];
 			$radio = $_POST['radio'];
+			$forms = $_POST['forms'];
 
 			$file = fopen("players.txt","a") or die("File non-existent or corrupted"); //Open text file
-			$s = $name.",".$age.",".$email.",".$radio."\n"; //Declare value to be written to file
+			$s = $name.",".$age.",".$email.",".$radio.",".$forms."\n"; //Declare value to be written to file
 			fputs($file,$s) or die("Data could not be written to file"); //Write single line to file
 
 			fclose($file); //Close file
 		}
 
-		/*VV THIS CREATES THE TABLE VV*/
+		/* THIS CREATES THE TABLE */
 
 		 $myFile = "players.txt"; //File declared
 
