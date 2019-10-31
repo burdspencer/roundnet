@@ -70,7 +70,7 @@ table, tr, th, td{
 			background-color:#cfba83;
 			margin: auto;}
 input[type=text] {
-			width: 7%;
+			width: 10%;
 			transition: width 0.4s ease-in-out;
 			padding: 2px 2px;
 		  margin: 8px 0;
@@ -82,15 +82,22 @@ input[type=text]:focus {
 			border: 2px solid #000000; }
 .form { background-color: #8b794b;
 			color: #FFFFFF;
-			width: auto;
+			width: 40%;
 			justify-content: center;
+			border-radius: 20px;
 			padding: 8px 20px;}
 .column {
   float: left;
   width: 33.33%;
-	border-radius: 10px;
+	border-radius: 20px;
+	padding-top: 5px;
 	border-color: #000000;
 	background-color: #cfba83;}
 .row:after {display: table;
 					  clear: both;
 						}
+.darkPanel {color: #FFFFFF;
+						background-color: #444444;
+						width: 80%;
+						border-radius: 20px;
+					}

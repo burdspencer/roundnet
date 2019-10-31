@@ -8,7 +8,7 @@
 </head>
 <div id="wrapper">
 <header id="center">
-<a href="index.html"><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
+<a href="index.php"><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
 </header>
 <nav>
 	<a href="index.php" class="button">Home</a> &nbsp; &nbsp;
@@ -18,6 +18,7 @@
 <body id="wrapper">
 	<br><br><br>
 	<center>
+		<div class="darkPanel">
 	<form action="#" method ="post">
 	Name:<input type="text" name="name" class="name"> &nbsp;	Age:<input type="text" name="age" class="age"> <br><br>
 	Email:<input type="text" name="email" class="email"> &nbsp;<br>
@@ -33,8 +34,10 @@
 	<input type="submit" name="submit" value="Add Player">
 	&nbsp;
 	<input type="submit" name="clear" value="Clear Data">
-	<br><br><br>
+	<br>
+	<br>
 	</form>
+</div>
 	<?php
 		if(isset($_POST['clear'])) //When user hits clear data
 			{

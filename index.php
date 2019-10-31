@@ -8,7 +8,7 @@
 </head>
 <div id="wrapper">
 <header id="center">
-<a href="index.html"><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
+<a href="index.php><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
 </header>
 <nav>
 	<a href="index.php" class="button">Home</a> &nbsp; &nbsp;
