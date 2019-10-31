@@ -1,7 +1,7 @@
 Import .csv - 0%
 Export as .csv - 0%
-Download and upload forms - 50%
+Download and upload forms - 100%
 Use truncate() function to remove rogue row on 'Players' table - 0% = *CSS fix found for now
-Zebra stripe on tables - 0%
+Zebra stripe on tables - 100% = It can be implemented by tagging the class to the table, but it looks bad with the rogue row
 Fix Wrapping on Forms.php - 100%
 Append student name and form name as filename on Forms.php - 0%

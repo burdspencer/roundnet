@@ -1,1 +1,3 @@
 Specner,12,qfoqf,Casual,Submitted
+John,3,16,Casual,Submitted
+spencer,212,fdsanosd,Hardcore,Not Submitted

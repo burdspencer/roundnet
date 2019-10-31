@@ -64,7 +64,7 @@
 		/* THIS CREATES THE TABLE */
 
 		 $myFile = "players.txt"; //File declared
-
+		 $number = 0;
 		 $openFile = fopen($myFile, "r"); //Open file for read
 		 echo "<table><tr><th>Name\t</th><th>Age\t</th><th>Email\t</th><th>Playstyle\t</th><th>Forms?\t</th></tr>";
 			if (file_exists($myFile)) //if file exists
@@ -73,8 +73,16 @@
 		     {
 		       $player = rtrim(fgets($openFile),"\r"); //get file contents, put them in $player
 		       $element = explode(",", $player); //Explode on comma, store in $fileName
-					 echo "<tr><td>$element[0]\t</td><td>$element[1]\t</td><td>$element[2]\t</td><td>$element[3]\t</td><td>$element[4]\t</td></tr>"; //Display the table
-		     }
+					 if($number % 2 === 0) //This if statement exists purely for the purpose of zebra striping if desired
+					 {
+						 echo "<tr><td>$element[0]\t</td><td>$element[1]\t</td><td>$element[2]\t</td><td>$element[3]\t</td><td>$element[4]\t</td></tr>";
+					 }
+					 else
+					 {
+						 echo "<tr><td>$element[0]\t</td><td>$element[1]\t</td><td>$element[2]\t</td><td>$element[3]\t</td><td>$element[4]\t</td></tr>"; //Display the table
+					 }
+					 $number++;
+				 }
 		  fclose($openFile);
 		  }
 		  else
