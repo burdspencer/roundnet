@@ -39,8 +39,29 @@
 	</form>
 </div>
 <br>
-	<?php
-		if(isset($_POST['clear'])) //When user hits clear data
+
+<?php
+		//echo phpinfo();
+
+		//MySQL Version of DB
+		$servername = "localhost";
+		$username = "username";
+		$password = "password";
+
+		$conn = new mysqli($servername, $username, $password); //Create connection || Current Bug: Connection refused by target machine
+		if ($conn->connect_error){
+			die("Connection failed: " . $conn->connect_error);
+		}
+		echo "Connected successfully.";
+		$sql = "CREATE DATABASE PLAYERS"; //Create database 'PLAYERS'
+		if ($conn->query($sql) == TRUE){
+			echo "Database created successfully."; //Debug Message
+		}
+		else {
+			echo "Error creating database: " . $conn->error;
+		}
+		$conn->close(); //Close connection when done
+		/*if(isset($_POST['clear'])) //When user hits clear data
 			{
 				$file = fopen("players.txt", "a"); //Open file to write
 				ftruncate($file, 0); // Clear content to 0 bits
@@ -61,8 +82,7 @@
 				fclose($file); //Close file
 			}
 
-		/* THIS CREATES THE TABLE */
-
+		/* THIS CREATES THE TABLE *//*
 		 $myFile = "players.txt"; //File declared
 		 $number = 0;
 		 $openFile = fopen($myFile, "r"); //Open file for read
@@ -90,7 +110,7 @@
 		    echo "File doesn't exists!";
 		  }
 			echo "</table>";
-	?>
+	*/?>
 </center>
 </body>
 </div>
