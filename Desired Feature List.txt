@@ -1,0 +1,7 @@
+Import .csv - 0%
+Export as .csv - 0%
+Less generic buttons - 50%
+Download and upload forms - 50%
+Use truncate() function to remove rogue row on 'Players' table - 0%
+Zebra stripe on tables - 0%
+Fix Wrapping on Forms.php
