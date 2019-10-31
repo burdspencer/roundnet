@@ -25,6 +25,8 @@
 			<br><br>
 		  <input type="submit" value="Upload Form" name="submit" class="submitButton">
 			<br><br>
+			Click File Name to view or click Path to download
+			<br><br>
 			<?php
 				if(isset($_POST['submit'])){
 				  $target_dir = "uploads/";
@@ -60,8 +62,8 @@
 				echo "<table class='fileTable'><tr><th class='fileTable'>File Name\t</th><th class='fileTable'>Path\t</th></tr>";
 				foreach($fileArray as $file) {
 					  echo "<tr class='fileTable'>\n";
-				    echo "<td class='fileTable'>{$file}</td>\n";
-				    echo "<td class='fileTable'><a href=/cis/roundnet/uploads/$file>/uploads/$file</td>\n";
+				    echo "<td class='fileTable'><a href='/cis/roundnet/uploads/{$file}'>{$file}</td>\n";
+				    echo "<td class='fileTable'><a href='path/to/file'>/uploads/$file</td>\n";
 				    echo "</tr>\n";
   			}
 				echo"</table>";
