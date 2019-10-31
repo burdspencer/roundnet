@@ -23,9 +23,8 @@
 		  Select file to upload:<br>
 		  <input type="file" name="fileToUpload" id="fileToUpload" class="submitButton">
 			<br><br>
-		  <input type="submit" value="Upload File" name="submit" class="submitButton">
+		  <input type="submit" value="Upload Form" name="submit" class="submitButton">
 			<br><br>
-
 			<?php
 				if(isset($_POST['submit'])){
 				  $target_dir = "uploads/";
@@ -54,6 +53,19 @@
 				      }
 				  }
 				}
+
+				opendir('C:\Users\Spencer\cis\roundnet\uploads');//Open directory handle
+
+				$fileArray = scandir('C:\Users\Spencer\cis\roundnet\uploads');//Returns array containing filenames and paths
+				echo "<table class='fileTable'><tr><th class='fileTable'>File Name\t</th><th class='fileTable'>Path\t</th></tr>";
+				foreach($fileArray as $file) {
+					  echo "<tr class='fileTable'>\n";
+				    echo "<td class='fileTable'>{$file}</td>\n";
+				    echo "<td class='fileTable'><a href=/cis/roundnet/uploads/$file>/uploads/$file</td>\n";
+				    echo "</tr>\n";
+  			}
+				echo"</table>";
+				closedir(); //Close directory handle. If no resource is specified, the last opendir is assumed.
 			?>
 
 		</div>

@@ -31,13 +31,14 @@
 	<input type="radio" name="forms" value="Not Submitted">Not Submitted
 	<input type="radio" name="forms" value="Submitted">Submitted
 	<br><br>
-	<input type="submit" name="submit" value="Add Player">
+	<input type="submit" name="submit" value="Add Player" class="submitButton">
 	&nbsp;
-	<input type="submit" name="clear" value="Clear Data">
+	<input type="submit" value="Clear Data" name="clear" class="submitButton">
 	<br>
 	<br>
 	</form>
 </div>
+<br>
 	<?php
 		if(isset($_POST['clear'])) //When user hits clear data
 			{
@@ -65,12 +66,12 @@
 		 $myFile = "players.txt"; //File declared
 
 		 $openFile = fopen($myFile, "r"); //Open file for read
-		 echo "<table><tr><th>Name\t</th><th>Age\t</th><th>Email\t</th><th>Playstyle\t</th><th>Forms?\t</th>";
+		 echo "<table><tr><th>Name\t</th><th>Age\t</th><th>Email\t</th><th>Playstyle\t</th><th>Forms?\t</th></tr>";
 			if (file_exists($myFile)) //if file exists
 		  {
 		     while (!feof($openFile)) //while file pointer is not at end of file
 		     {
-		       $player = fgets($openFile); //get file contents, put them in $player
+		       $player = rtrim(fgets($openFile),"\r"); //get file contents, put them in $player
 		       $element = explode(",", $player); //Explode on comma, store in $fileName
 					 echo "<tr><td>$element[0]\t</td><td>$element[1]\t</td><td>$element[2]\t</td><td>$element[3]\t</td><td>$element[4]\t</td></tr>"; //Display the table
 		     }
