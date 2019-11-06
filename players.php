@@ -41,17 +41,20 @@
 <br>
 
 <?php
+/*Login to mySQL db*/
 $servername = "localhost";
 $username = "root";
 $password = "";
 
 
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password); //Connect to mySQL db
 
 if(!$conn){
-	die("Connection Failed Successfully: " . mysqli_connect_error());
+	die("Connection Failed: " . mysqli_connect_error()); //If connection fails, output the error
 }
 echo "Connected Successfully";
+//Write each user form entry to database
+//Output Players table in proper HTML form
 ?>
 </center>
 </body>
