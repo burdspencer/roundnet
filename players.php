@@ -45,14 +45,16 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "roundnet";
 
+$conn = mysqli_connect($servername, $username, $password, $dbname); //Connect to mySQL db
 
-$conn = mysqli_connect($servername, $username, $password); //Connect to mySQL db
-
-if(!$conn){
-	die("Connection Failed: " . mysqli_connect_error()); //If connection fails, output the error
+if($conn->connect_error){
+	die("You made it to line 53: " . mysqli_connect_error()); //If connection fails, output the error
 }
+else{
 echo "Connected Successfully";
+}
 //Write each user form entry to database
 //Output Players table in proper HTML form
 ?>
