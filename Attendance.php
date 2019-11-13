@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,22 +25,13 @@
 	First Name:<input type="text" name="first_name" class="name"> &nbsp;
 	Middle Initial:<input type="text" name="middle_initial" class="middleinit"> &nbsp;
 	Last Name:<input type="text" name="last_name" class="name"> &nbsp;
-	Age:<input type="text" name="age" class="age"> <br><br>
-	Email:<input type="text" name="email" class="email"> &nbsp;
+	<br>
 	Western ID Number(WIN):<input type="text" name="win" class="email"> &nbsp;
 	<br>
 	<br>
-	Playstyle:<br>
-	<input type="radio" name="playstyle" value="Casual">Casual
-	<input type="radio" name="playstyle" value="Hardcore">Hardcore
-	<br><br>
-	Phone Number:<input type="text" name="phone" class="email"> &nbsp;
-	<br><br>
-	Forms Submitted:<br>
-	<input type="radio" name="forms" value="Not Submitted">Not Submitted
-	<input type="radio" name="forms" value="Submitted">Submitted
-	<br><br>
-	<input type="submit" name="submit" value="Add Player" class="submitButton">
+	Match Number:<input type="text" name="match_number" class="age"> &nbsp;
+	Attended? Enter 1 for yes or 0 for no:<input type="text" name="attended" class="age"> &nbsp;
+	<input type="submit" name="submit" value="Add Record" class="submitButton">
 	&nbsp;
 	<input type="submit" value="Clear Data" name="clear" class="submitButton">
 	<br>
@@ -49,6 +41,7 @@
 <br>
 
 <?php
+/*This file uses MySQL and PHP to track player attendance.*/
 /*Login to mySQL db*/
 $servername = "localhost";
 $username = "root";
@@ -62,18 +55,15 @@ if($conn->connect_error){
 }
 if(isset($_POST['submit'])){
 	/*Use mysqli_real_escape_string function to avoid SQL Injection security issues.*/
-	$first_name = mysqli_real_escape_string($_POST['first_name']);
-	$middle_initial = mysqli_real_escape_string($_POST['middle_initial']);
-	$last_name = mysqli_real_escape_string($_POST['last_name']);
-	$age = mysqli_real_escape_string($_POST['age']);
-	$email = mysqli_real_escape_string($_POST['email']);
-	$win = mysqli_real_escape_string($_POST['win']);
-	$playstyle = mysqli_real_escape_string($_POST['playstyle']);
-	$phone = mysqli_real_escape_string($_POST['phone']);
-	$forms = mysqli_real_escape_string($_POST['forms']);
+	$first_name = mysqli_real_escape_string($conn,$_POST['first_name']);
+	$middle_initial = mysqli_real_escape_string($conn,$_POST['middle_initial']);
+	$last_name = mysqli_real_escape_string($conn,$_POST['last_name']);
+	$win = mysqli_real_escape_string($conn,$_POST['win']);
+	$match_number = mysqli_real_escape_string($conn,$_POST['match_number']);
+	$attended = mysqli_real_escape_string($conn, $_POST['attended']);
 	/*Insert data into table*/
-	$sql = "INSERT INTO players (first_name,middle_initial,last_name,age,email,win,playstyle,phone,forms)
-						VALUES('$first_name','$middle_initial','$last_name','$age','$email','$win','$playstyle','$phone','$forms');";
+	$sql = "INSERT INTO attendance (win,match_number,attended, first_name,middle_initial,last_name)
+						VALUES('$win','$match_number','$attended','$first_name','$middle_initial','$last_name');";
 	if($conn->query($sql) === True){
 		echo "Data has been written successfully";
 	}
@@ -81,6 +71,7 @@ if(isset($_POST['submit'])){
 		echo "Error writing data to table: " . $conn->error;
 	}
 }
+//What would the primary key be in this table?
 //Need to write table code here
 ?>
 </center>

@@ -1,3 +1,6 @@
+This file is used to receive and distribute user files. In our context, these files include concussion protocol forms and
+safe driver forms.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,7 @@
 <nav>
 	<a href="index.php" class="button">Home</a> &nbsp; &nbsp;
 	<a href="players.php" class="button">Players</a> &nbsp; &nbsp;
+	<a href="attendance.php" class="button">Attendance</a> &nbsp; &nbsp;
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body>
