@@ -201,3 +201,30 @@ input[type=text]:focus {
 	font-weight:bold;
 	margin: auto;
 }
+.initializeButton {
+	float:right;
+	background-color: #BB9D4E;
+	border-radius: 5px;
+	box-shadow: 0 8px #444444;
+	padding: 8px 20px;
+	color: #ffffff;
+	display: inline-block;
+	font: normal bold 24px/1 Arial, sans-serif;
+	text-align: center;
+	text-shadow: 2px 2px #000000;
+	text-decoration: none;
+}
+.initializeButton:active {
+	float:right;
+	box-shadow: 0 8px #666;
+	transform: translateY(4px);
+	background-color: #BB9D4E;
+	border-radius: 5px;
+	padding: 8px 20px;
+	color: #ffffff;
+	display: inline-block;
+	font: normal bold 24px/1 Arial, sans-serif;
+	text-align: center;
+	text-shadow: 2px 2px #000000;
+	text-decoration: none;
+}

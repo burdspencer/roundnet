@@ -11,7 +11,7 @@
 <a href="index.php"><img src="roundnet.jpg" alt="roundnet logo" height="200" width="200"></a><h1>Roundnet @ WMU</h1>
 </header>
 <nav>
-	<a href="index.php" class="button">Home</a> &nbsp; &nbsp;
+	<a href="index.php" class="button">Dashboard</a> &nbsp; &nbsp;
 	<a href="players.php" class="button">Players</a> &nbsp; &nbsp;
 	<a href="attendance.php" class="button">Attendance</a> &nbsp; &nbsp;
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
