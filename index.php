@@ -27,14 +27,15 @@
  <br><br><br>
 		<div class="row">
 			<div class="column"><br>
-				&nbsp;&nbsp;<a href="index.php" class="button">Initialize</a><br><br>
+				&nbsp;&nbsp;<a href="initalize.php" class="button">Initialize</a><br><br>
 				&nbsp; Do not press unless Database has not been created.
 			</div>
 			<div class="column">
-				Possible box for data insertion into Membership table?
+				Possible box for recent match results
+				Begin at most recent entry in "Game_Info", loop over 5?
 			</div>
 			<div class="column">
-				Maybe use this one for the display table?
+				Maybe use this one for upcoming matches? - Need form for Conner to use
 			</div>
 		</div>
 
