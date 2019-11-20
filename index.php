@@ -17,18 +17,9 @@
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body>
-	<?php
-		$directory = "uploads";
-		$fileArray = scandir($directory);
-		$num_files = count($fileArray) - 2;
-
-		$lines = count(file("players.txt"));
- ?>
  <br><br><br>
 		<div class="row">
 			<div class="column"><br>
-				&nbsp;&nbsp;<a href="initalize.php" class="button">Initialize</a><br><br>
-				&nbsp; Do not press unless Database has not been created.
 			</div>
 			<div class="column">
 				Possible box for recent match results

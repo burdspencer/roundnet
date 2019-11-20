@@ -53,7 +53,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "roundnet_test";
+$dbname = "roundnet";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname); //Connect to mySQL db
 
@@ -62,15 +62,15 @@ if($conn->connect_error){
 }
 if(isset($_POST['submit'])){
 	/*Use mysqli_real_escape_string function to avoid SQL Injection security issues.*/
-	$first_name = mysqli_real_escape_string($_POST['first_name']);
-	$middle_initial = mysqli_real_escape_string($_POST['middle_initial']);
-	$last_name = mysqli_real_escape_string($_POST['last_name']);
-	$age = mysqli_real_escape_string($_POST['age']);
-	$email = mysqli_real_escape_string($_POST['email']);
-	$win = mysqli_real_escape_string($_POST['win']);
-	$playstyle = mysqli_real_escape_string($_POST['playstyle']);
-	$phone = mysqli_real_escape_string($_POST['phone']);
-	$forms = mysqli_real_escape_string($_POST['forms']);
+	$first_name = mysqli_real_escape_string($conn,$_POST['first_name']);
+	$middle_initial = mysqli_real_escape_string($conn,$_POST['middle_initial']);
+	$last_name = mysqli_real_escape_string($conn,$_POST['last_name']);
+	$age = mysqli_real_escape_string($conn,$_POST['age']);
+	$email = mysqli_real_escape_string($conn,$_POST['email']);
+	$win = mysqli_real_escape_string($conn,$_POST['win']);
+	$playstyle = mysqli_real_escape_string($conn,$_POST['playstyle']);
+	$phone = mysqli_real_escape_string($conn,$_POST['phone']);
+	$forms = mysqli_real_escape_string($conn,$_POST['forms']);
 	/*Insert data into table*/
 	$sql = "INSERT INTO players (first_name,middle_initial,last_name,age,email,win,playstyle,phone,forms)
 						VALUES('$first_name','$middle_initial','$last_name','$age','$email','$win','$playstyle','$phone','$forms');";
@@ -83,6 +83,7 @@ if(isset($_POST['submit'])){
 }
 //Need to write table code here
 ?>
+<h2>This page just needs the table output from the players table.<h2>
 </center>
 </body>
 </div>
