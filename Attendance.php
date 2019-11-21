@@ -63,17 +63,39 @@ if(isset($_POST['submit'])){
 	/*Insert data into table*/
 				$sql = "INSERT INTO attendance (win,match_number,attended)
 							VALUES('$win','$match_number','$radio');";
-			}
+
 	if($conn->query($sql) === True){
 		echo "Data has been written successfully";
 	}
 	else{
 		echo "Error writing data to table: " . $conn->error;
 	}
-//What would the primary key be in this table?
-//Need to write table code here
+}
+	$sql = "SELECT * FROM attendance";
+	$result = $conn->query($sql);
+	if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+		echo "<table>
+					 <tr>
+							<th>WIN ID</th>
+							<th>Match Number</th>
+							<th>Attended</th>
+				   </tr>";
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>
+								<td>" . $row["win"]. "</td>
+								<td>" . $row["match_number"]. "</td>
+								<td>" . $row["attended"]. "</td>
+						 </tr>";
+    }
+		echo "</table>";
+} else {
+    echo "0 results";
+}
+
 ?>
-<h2>Input on this page works, it needs a table output now.</h2>
+<h2>Table needs formatting and modification/deletion ability</h2>
+	<h3>For deletion and modification, create a form where user types in primary key, which gets turned into a prepared statement which in turn gets queried to the server</h3>
 </center>
 </body>
 </div>

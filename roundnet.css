@@ -96,14 +96,13 @@ footer nav {
 	text-shadow: 2px 2px #000000;
 	text-decoration: none;
 }
-
 table,
 tr,
 th,
 td {
 	table-layout: fixed;
 	min-width: 100%;
-	border: 0px solid black;
+	border: 1px solid black;
 	background-color: #cfba83;
 	color: #000000;
 	margin: auto;
