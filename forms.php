@@ -30,7 +30,7 @@
 			<br><br>
 			<?php
 				if(isset($_POST['submit'])){
-				  $target_dir = "uploads/";
+				  $target_dir = "uploads";
 				  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				  $uploadOk = 1;
 				  $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -57,9 +57,9 @@
 				  }
 				}
 
-				opendir('C:\Users\Spencer\cis\roundnet\uploads');//Open directory handle
+				opendir('uploads');//Open directory handle
 
-				$fileArray = scandir('C:\Users\Spencer\cis\roundnet\uploads');//Returns array containing filenames and paths
+				$fileArray = scandir('uploads');//Returns array containing filenames and paths
 				echo "<table class='fileTable'><tr><th class='fileTable'>File Name\t</th><th class='fileTable'>Path\t</th></tr>";
 				foreach($fileArray as $file) {
 					  echo "<tr class='fileTable'>\n";

@@ -20,8 +20,6 @@
  <br><br><br>
 		<div class="row">
 			<div class="column"><br>
-				&nbsp;&nbsp;<a href="initalize.php" class="button">Initialize</a><br><br>
-				&nbsp; Do not press unless Database has not been created.
 			</div>
 			<div class="column">
 				Possible box for recent match results
