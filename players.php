@@ -44,8 +44,8 @@
 	<input type="submit" value="Clear Data" name="clear" class="submitButton">
 	<br>
 	<br>
-	<input type="submit" value="Sort Ascending" name="ascend" class="submitButton">
-	<input type="submit" value="Sort Descending" name="descend" class="submitButton">
+	<input type="submit" value="Show Ascending" name="ascend" class="submitButton">
+	<input type="submit" value="Show Descending" name="descend" class="submitButton">
 	<br>
 	<br>
 	<br>
@@ -59,47 +59,12 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "roundnet";
-
+$tabledisplayed = false;
 $conn = mysqli_connect($servername, $username, $password, $dbname); //Connect to mySQL db
 
 if($conn->connect_error){
 	die("Connection Failed: " . mysqli_connect_error()); //If connection fails, output the error
 	}
-																			/*while(isset($_POST['ascend'] == null && isset($_POST['descend'] == null))){
-																			$sql = "SELECT * FROM players ORDER BY win asc";
-																			$result = $conn->query($sql);
-																			if (mysqli_num_rows($result) > 0) {
-																			// output data of each row
-																			echo "<table>
-																						 <tr>
-																								<th>First Name</th>
-																								<th>Middle Initial</th>
-																								<th>Last Name</th>
-																								<th>WIN</th>
-																								<th>Age</th>
-																								<th>Email</th>
-																								<th>Playstyle</th>
-																								<th>Phone</th>
-																								<th>Forms</th>
-																						 </tr>";
-																			while($row = mysqli_fetch_assoc($result)) {
-																					echo "<tr>
-																									<td>" . $row["first_name"]. "</td>
-																									<td>" . $row["middle_initial"]. "</td>
-																									<td>" . $row["last_name"]. "</td>
-																									<td>" . $row["win"]. "</td>
-																									<td>" . $row["age"]. "</td>
-																									<td>" . $row["email"]. "</td>
-																									<td>" . $row["playstyle"]. "</td>
-																									<td>" . $row["phone"]. "</td>
-																									<td>" . $row["forms"]. "</td>
-																									</tr>";
-																			}
-																			echo "</table>";
-																			} else {
-																			echo "0 results";
-																			}
-																		}*/
 if(isset($_POST['submit'])){
 	/*Use mysqli_real_escape_string function to avoid SQL Injection security issues.*/
 	$first_name = mysqli_real_escape_string($conn,$_POST['first_name']);
@@ -118,10 +83,12 @@ if(isset($_POST['submit'])){
 		echo "Data has been written successfully";
 	}
 	else{
-		echo "Error writing data to table: " . $conn->error;
+		echo "<script>alert(Error: $conn->error);</script>";
 	}
 }
+
 if (isset($_POST['ascend'])){ //Sorts table in ascending order by WIN
+$tabledisplayed = true;
 $sql = "SELECT * FROM players ORDER BY win asc";
 $result = $conn->query($sql);
 if (mysqli_num_rows($result) > 0) {
@@ -157,6 +124,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 }
 if (isset($_POST['descend'])){ //Sorts table in descending order by WIN
+$tabledisplayed = true;
 $sql = "SELECT * FROM players ORDER BY win desc";
 $result = $conn->query($sql);
 if (mysqli_num_rows($result) > 0) {
@@ -191,19 +159,46 @@ if (mysqli_num_rows($result) > 0) {
 	echo "0 results";
 }
 }
-/*if (isset($_POST['clear'])){
-	$sql = "DROP * FROM players WHERE win="$_POST['win']"";
+/*Selectively delete data from table*/
+if (isset($_POST['clear'])){
+	$win = mysqli_real_escape_string($conn,$_POST['win']);
+	$sql = "DELETE FROM players WHERE win='$win'";
 	if($conn->query($sql) === True){
 		echo "Data deleted successfully.";
 	}
 	else{
 		echo "Error deleting data from table: " . $conn->error;
-	}
+	}}
+/*Selectively edit data from table*/
+if (isset($_POST['edit'])){
+	$win = mysqli_real_escape_string($conn,$_POST['win']);
+	$sql = "SELECT FROM players WHERE win='$win'";
+	if (!$_POST['first_name'] == $row["first_name"])
+		{$row["first_name"] = $_POST['first_name'];}
+	if (!$_POST['middle_initial'] == $row["middle_initial"])
+		{$row["middle_initial"] = $_POST['middle_initial'];}
+	if (!$_POST['last_name'] == $row["last_name"])
+		{$row["last_name"] = $_POST['last_name'];}
+	if (!$_POST['win'] == $row["win"])
+		{$row["win"] = $_POST['win'];}
+	if (!$_POST['age'] == $row["age"])
+		{$row["age"] = $_POST['age'];}
+	if (!$_POST['email'] == $row["email"])
+		{$row["email"] = $_POST['email'];}
+	if (!$_POST['playstyle'] == $row["playstyle"])
+		{$row["playstyle"] = $_POST['playstyle'];}
+	if (!$_POST['phone'] == $row["phone"])
+		{$row["phone"] = $_POST['phone'];}
+	if (!$_POST['forms'] == $row["forms"])
+	{$row["forms"] = $_POST['forms'];}
 
-}*/
+	if($conn->query($sql) === True){
+		echo "Data altered successfully.";
+	}
+	else{
+		echo "Error altering data in table: " . $conn->error;
+	}}
 ?>
-<h2>Table needs formatting, and ability to delete/modify<h2>
-	<h3>For deletion and modification, create a form where user types in primary key, which gets turned into a prepared statement which in turn gets queried to the server</h3>
 </center>
 </body>
 </div>
