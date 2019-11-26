@@ -17,13 +17,6 @@
 	<a href="forms.php" class="button">Form Lookup</a> &nbsp; &nbsp;
 </nav>
 <body>
-	<?php
-		$directory = "uploads";
-		$fileArray = scandir($directory);
-		$num_files = count($fileArray) - 2;
-
-		$lines = count(file("players.txt"));
- ?>
  <br><br><br>
 		<div class="row">
 			<div class="column"><br>
